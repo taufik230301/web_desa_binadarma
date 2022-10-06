@@ -31,7 +31,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard</h1>
+                            <h1 class="m-0">Data Diri <?= $data_penduduk["nama"]?></h1>
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-6">
@@ -53,85 +53,72 @@
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
-                    <!-- Small boxes (Stat box) -->
                     <div class="row">
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-info">
-                                <div class="inner">
-                                    <h3><?=$penduduk['total_penduduk']?></h3>
 
-                                    <p>Jumlah Data Penduduk</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-person-stalker"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-success">
-                                <div class="inner">
-                                    <h3><?=$penduduk_mampu['total_penduduk_mampu']?></h3>
-
-                                    <p>Jumlah Penduduk Kategori Mampu</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-warning">
-                                <div class="inner">
-                                    <h3><?=$penduduk_tidak_mampu['total_penduduk_tidak_mampu']?></h3>
-
-                                    <p>Jumlah Penduduk Kategori Tidak Mampu</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-minus-circled"></i>
-                                </div>
-                               
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-info">
-                                <div class="inner">
-                                    <h3><?=$penduduk_bantuan_tunai_langsung['total_bantuan_tunai_langsung']?></h3>
-
-                                    <p>Jumlah Penduduk Penerima Bantuan Langsung Tunai</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-pie-graph"></i>
-                                </div>
-                               
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-danger">
-                                <div class="inner">
-                                    <h3><?=$penduduk_bantuan_tunai_bupati['total_bantuan_tunai_bupati']?></h3>
-
-                                    <p>Jumlah Penduduk Penerima Bantuan Dana Bupati</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-connection-bars"></i>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <!-- ./col -->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nama</th>
+                                    <th scope="col"><?= $data_penduduk["nama"]?></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">NIK</th>
+                                    <td><?= $data_penduduk["nik"]?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">NO HP</th>
+                                    <td><?= $data_penduduk["no_hp"]?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Email</th>
+                                    <td><?= $data_penduduk["email"]?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Tanggal Lahir</th>
+                                    <td><?= $data_penduduk["tgl_lahir"]?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Tempat Lahir</th>
+                                    <td><?= $data_penduduk["tempat_lahir"]?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Alamat</th>
+                                    <td><?= $data_penduduk["alamat"]?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Jenis Kelamin</th>
+                                    <td><?= $data_penduduk["jenis_kelamin"]?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Pekerjaan</th>
+                                    <td><?= $data_penduduk["pekerjaan"]?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">RT</th>
+                                    <td><?= $data_penduduk["nomor_rt"]?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Kategori Kelas Ekonomi </th>
+                                    <td><?= $data_penduduk["kategori_kelas_ekonomi"]?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Kategori Bantuan</th>
+                                    <td><?= $data_penduduk["kategori_bantuan"]?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Keterangan</th>
+                                    <td><?= $data_penduduk["keterangan"]?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Foto KTP</th>
+                                    
+                                    <td><img src="<?= base_url();?>assets/ktp/<?php echo $data_penduduk["foto_ktp"]?>" style="width: 25%"></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <!-- /.row -->
-
-                    <!-- /.row (main row) -->
                 </div>
                 <!-- /.container-fluid -->
             </section>

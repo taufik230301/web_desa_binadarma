@@ -623,6 +623,8 @@ class Data_penduduk extends CI_Controller {
 	}
 
 	public function edit_data_masyarakat(){
+
+		
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 4) {
 			$nama = $this->input->post("nama");
 			$username = $this->input->post("username");
@@ -643,8 +645,10 @@ class Data_penduduk extends CI_Controller {
 			$id = $this->input->post("id");
 			$id_user_detail = $this->input->post("id_user_detail");
 			$id_user_level = 4;
-			$file_name = md5($username.$password);
+			$file_name = md5($username.$password.rand(0,99999));
 			$id_status_verifikasi = 1;
+
+			
 	
 			// echo $nama;
 			// echo "<br>";
@@ -691,11 +695,12 @@ class Data_penduduk extends CI_Controller {
 		$this->upload->initialize($config);
 		$foto_ktp = $this->upload->do_upload('foto_ktp');
 
+
 			if($foto_ktp){
 				$foto_ktp = $this->upload->data();
 			}else{
 				$this->session->set_flashdata('error_file','error_file');
-				redirect('Data_penduduk/view_admin_rt');
+				redirect('Data_penduduk/view_masyarakat/'.$id);
 			}
 
 			$hasil = $this->m_user->update_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan, $id, $id_user_detail, $foto_ktp['file_name'], $id_status_verifikasi);

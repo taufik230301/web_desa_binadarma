@@ -1,10 +1,10 @@
  <!-- Main Sidebar Container -->
- <aside class="main-sidebar sidebar-dark-primary elevation-4">
+ <aside class="main-sidebar sidebar-dark-primary elevation-4 custom-color">
      <!-- Brand Logo -->
      <a href="index3.html" class="brand-link">
          <img src="<?= base_url();?>assets/image/logo.jpg" alt="AdminLTE Logo"
              class="brand-image img-circle elevation-3" style="opacity: .8">
-         <span class="brand-text font-weight-light">AdminLTE 3</span>
+         <span class="brand-text font-weight-light">SISM-DWM</span>
      </a>
 
      <!-- Sidebar -->
@@ -29,8 +29,8 @@
                  <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                  <li class="nav-item">
-                     <a href="<?=base_url();?>Dashboard/view_masyarakat" class="nav-link">
-                         <i class="nav-icon fas fa-th"></i>
+                     <a href="<?=base_url();?>Dashboard/view_masyarakat/<?=$this->session->userdata('id');?>" class="nav-link">
+                         <i class="nav-icon fas fa-tachometer-alt"></i>
                          <p>
                              Dashboard
                          </p>
@@ -38,7 +38,7 @@
                  </li>
                  <li class="nav-item">
                      <a href="<?=base_url();?>Data_penduduk/view_masyarakat/<?=$this->session->userdata('id');?>" class="nav-link">
-                         <i class="nav-icon fas fa-th"></i>
+                         <i class="nav-icon fas fa-user"></i>
                          <p>
                              Update Data
                          </p>

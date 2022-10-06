@@ -61,10 +61,11 @@ class Dashboard extends CI_Controller {
 	}
 	}
 	
-    public function view_masyarakat()
+    public function view_masyarakat($id)
 	{
 
 	if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 4) {
+			$data['data_penduduk'] = $this->m_user->get_user_penduduk_by_id($id)->row_array();
 			$data['penduduk_bantuan_tunai_langsung'] = $this->m_user->get_penduduk_bantuan_tunai_langsung()->row_array();
 			$data['penduduk_bantuan_tunai_bupati'] = $this->m_user->get_penduduk_bantuan_tunai_bupati()->row_array();
 			$data['penduduk_mampu'] = $this->m_user->get_penduduk_mampu()->row_array();

@@ -30,6 +30,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     });
     </script>
     <?php } ?>
+
+    <?php if ($this->session->flashdata('nik_err')){ ?>
+    <script>
+    swal({
+        title: "Error NIK!",
+        text: "NIK anda salah, mohon masukan kembali !",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="main">
 
         <!-- Sign up form -->
@@ -40,6 +50,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <h2 class="form-title">Daftar Akun</h2>
                         <form method="POST" class="register-form" action="<?=base_url()?>Register/proses"
                             id="register-form">
+                            <div class="form-group">
+                                <label for="nik"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="nik" id="nik" placeholder="NIK" />
+                            </div>
                             <div class="form-group">
                                 <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="username" id="username" placeholder="Your Name" />

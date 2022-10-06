@@ -69,7 +69,7 @@ class Login extends CI_Controller {
 				$this->session->set_userdata('email', $user['email']);
 				$this->session->set_userdata('id_user_level', $user['id_user_level']);
 				$this->session->set_flashdata('login_success','login_success');
-				redirect('Dashboard/view_masyarakat');
+				redirect('Dashboard/view_masyarakat/'.$user['id']);
 
 			}else{
 				$this->session->set_flashdata('loggin_err','loggin_err');
