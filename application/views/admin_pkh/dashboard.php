@@ -8,7 +8,7 @@
     <script>
     swal({
         title: "Success!",
-        text: "Login Berhasil, Selamat Datang Admin Di Aplikasi!",
+        text: "Login Berhasil, Selamat Datang Admin !",
         icon: "success",
         timer: 950
     });
