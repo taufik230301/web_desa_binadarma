@@ -87,7 +87,7 @@ class Data_penduduk extends CI_Controller {
 			$id_user_level = 4;
 			$file_name = md5($username.$password);
 
-			// echo $nama;
+			echo $nama;
 			// echo "<br>";
 			// echo $username;
 			// echo "<br>";
